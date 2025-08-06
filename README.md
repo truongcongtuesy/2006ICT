@@ -162,21 +162,6 @@ mvn test
 - ✅ Use case diagram (Exercise 5)
 - ✅ This complete VS Code project setup
 
-## 🆚 VS Code vs IntelliJ IDEA
-
-| Feature | IntelliJ IDEA | VS Code Setup |
-|---------|---------------|---------------|
-| Java Support | ✅ Built-in | ✅ Extension Pack |
-| Maven Integration | ✅ Native | ✅ Native |
-| JavaFX Support | ✅ Built-in | ✅ Maven Plugin |
-| Debugging | ✅ Advanced | ✅ Full Support |
-| Git Integration | ✅ Built-in | ✅ Built-in |
-| UML Diagrams | ✅ Built-in | ✅ PlantUML Extension |
-| Code Completion | ✅ Advanced | ✅ IntelliSense |
-| Refactoring | ✅ Advanced | ✅ Good Support |
-| Performance | ⚠️ Heavy | ✅ Lightweight |
-| Cost | 💰 Paid | ✅ Free |
-
 ## 🤝 Contributing
 
 1. Follow Java coding conventions
