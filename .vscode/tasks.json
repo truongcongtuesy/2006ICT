@@ -1,0 +1,74 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build Java Project",
+            "type": "shell",
+            "command": "C:/D/Australia Study/maven-mvnd-1.0.2-windows-amd64/mvn/bin/mvn.cmd",
+            "args": ["clean", "compile"],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "problemMatcher": ["$tsc"]
+        },
+        {
+            "label": "Run Hello World Console App",
+            "type": "shell",
+            "command": "C:/D/Australia Study/maven-mvnd-1.0.2-windows-amd64/mvn/bin/mvn.cmd",
+            "args": ["compile", "exec:java", "-Dexec.mainClass=com.lab2.exercise2.HelloWorld"],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared"
+            },
+            "dependsOn": "Build Java Project"
+        },
+        {
+            "label": "Run JavaFX App",
+            "type": "shell",
+            "command": "C:/D/Australia Study/maven-mvnd-1.0.2-windows-amd64/mvn/bin/mvn.cmd",
+            "args": ["clean", "javafx:run"],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "Test Project",
+            "type": "shell",
+            "command": "C:/D/Australia Study/maven-mvnd-1.0.2-windows-amd64/mvn/bin/mvn.cmd",
+            "args": ["test"],
+            "group": "test",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "Clean Project",
+            "type": "shell",
+            "command": "C:/D/Australia Study/maven-mvnd-1.0.2-windows-amd64/mvn/bin/mvn.cmd",
+            "args": ["clean"],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            }
+        }
+    ]
+}

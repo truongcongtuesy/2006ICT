@@ -1,0 +1,80 @@
+# Java
+*.class
+*.jar
+*.war
+*.ear
+*.log
+hs_err_pid*
+
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# IDE Files
+.vscode/settings.json
+.vscode/launch.json
+.idea/
+*.iws
+*.iml
+*.ipr
+*.swp
+*.swo
+
+# IntelliJ IDEA
+workspace.xml
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/gradle.xml
+.idea/assetWizardSettings.xml
+.idea/dictionaries
+.idea/libraries
+.idea/caches/
+.idea/modules.xml
+.idea/jarRepositories.xml
+
+# Operating System
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+*~
+
+# Logs
+logs/
+*.log
+
+# JavaFX
+*.fxml~
+
+# PlantUML generated files
+*.png
+*.svg
+*.eps
+*.pdf
+
+# Keep PlantUML source files
+!*.puml
+
+# Package Files
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
