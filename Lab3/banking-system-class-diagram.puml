@@ -1,0 +1,83 @@
+@startuml Banking System Class Diagram
+
+!theme plain
+
+class Customer {
+    - name: String
+    - id: String
+    + Customer(name: String, id: String)
+    + openAccount(accountType: String): Account
+    + closeAccount(account: Account): void
+    + getName(): String
+    + getId(): String
+}
+
+abstract class Account {
+    - accountNumber: String
+    - balance: double
+    + Account(accountNumber: String)
+    + deposit(amount: double): void
+    + withdraw(amount: double): boolean
+    + getBalance(): double
+    + getAccountNumber(): String
+}
+
+class SavingsAccount {
+    - interestRate: double
+    + SavingsAccount(accountNumber: String, interestRate: double)
+    + applyInterest(): void
+}
+
+class CheckingAccount {
+    - overdraftLimit: double
+    + CheckingAccount(accountNumber: String, overdraftLimit: double)
+    + checkOverdraft(): boolean
+}
+
+class Transaction {
+    - transactionId: String
+    - date: String
+    - amount: double
+    + Transaction(transactionId: String, date: String, amount: double)
+    + process(): void
+    + getTransactionId(): String
+    + getDate(): String
+    + getAmount(): double
+}
+
+class Statement {
+    - statementId: String
+    - period: String
+    + Statement(statementId: String, period: String)
+    + generate(): void
+    + getStatementId(): String
+    + getPeriod(): String
+}
+
+class BankCard {
+    - cardNumber: String
+    - expiryDate: String
+    + BankCard(cardNumber: String, expiryDate: String)
+    + validatePin(pin: String): boolean
+    + withdrawFromATM(amount: double): boolean
+    + getCardNumber(): String
+    + getExpiryDate(): String
+}
+
+' Relationships
+Customer ||--o{ Account : "owns\n1..*"
+Account ||--* Transaction : "contains\n0..*"
+Account <|-- SavingsAccount : "inherits"
+Account <|-- CheckingAccount : "inherits"
+Customer ||--o{ BankCard : "owns\n0..*"
+BankCard }o--|| Account : "linked to\n1..*"
+Statement ||--o{ Account : "for\n1"
+Statement ||--o{ Transaction : "lists\n0..*"
+
+note right of Account : Abstract class\nBase for all account types
+
+note bottom of Customer : Aggregation with Account\nCustomer can exist without accounts
+
+note bottom of Transaction : Composition with Account\nTransactions deleted when account deleted
+
+@enduml

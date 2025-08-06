@@ -1,0 +1,76 @@
+@startuml BankingSystemClassDiagram
+
+!theme plain
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+
+' Classes
+class Customer {
+    - name: String
+    - id: String
+    + openAccount(): Account
+    + closeAccount(account: Account): void
+}
+
+abstract class Account {
+    - accountNumber: String
+    - balance: double
+    + deposit(amount: double): void
+    + withdraw(amount: double): void
+}
+
+class SavingsAccount {
+    - interestRate: double
+    + applyInterest(): void
+}
+
+class CheckingAccount {
+    - overdraftLimit: double
+    + checkOverdraft(): boolean
+}
+
+class Transaction {
+    - transactionId: String
+    - date: Date
+    - amount: double
+    + process(): void
+}
+
+class Statement {
+    - statementId: String
+    - period: String
+    + generate(): void
+}
+
+class BankCard {
+    - cardNumber: String
+    - expiryDate: Date
+    + validatePin(pin: String): boolean
+    + withdrawFromATM(amount: double): void
+}
+
+' Relationships
+
+' Inheritance: Account -> SavingsAccount, CheckingAccount
+Account <|-- SavingsAccount
+Account <|-- CheckingAccount
+
+' Aggregation: Customer -> Account (Customer owns accounts)
+Customer o-- "1..*" Account : owns
+
+' Composition: Account -> Transaction (Account contains transactions)
+Account *-- "0..*" Transaction : contains
+
+' Association: Customer <-> BankCard
+Customer -- "1..*" BankCard : has
+
+' Association: BankCard <-> Account
+BankCard -- "1..*" Account : linked to
+
+' Association: Statement <-> Account
+Account -- "0..*" Statement : generates
+
+' Association: Statement <-> Transaction (Statement references transactions)
+Statement -- "1..*" Transaction : references
+
+@enduml

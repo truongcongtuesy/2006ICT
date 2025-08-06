@@ -1,0 +1,49 @@
+@startuml SecurityAlarmUseCases
+
+!define ACTOR_COLOR #lightblue
+!define USECASE_COLOR #lightgreen
+!define SYSTEM_COLOR #lightyellow
+
+left to right direction
+
+actor "User" as user ACTOR_COLOR
+actor "Security Center" as security ACTOR_COLOR  
+actor "Maintenance Technician" as tech ACTOR_COLOR
+actor "Motion Detector" as detector ACTOR_COLOR
+
+rectangle "Security Alarm System" SYSTEM_COLOR {
+    usecase "Activate Alarm System" as UC1 USECASE_COLOR
+    usecase "Deactivate Alarm System" as UC2 USECASE_COLOR
+    usecase "Detect Motion" as UC3 USECASE_COLOR
+    usecase "Emit Alarm Tone" as UC4 USECASE_COLOR
+    usecase "Enter Security Code" as UC5 USECASE_COLOR
+    usecase "Send Trip Signal" as UC6 USECASE_COLOR
+    usecase "Illuminate Set Button" as UC7 USECASE_COLOR
+    usecase "Validate Security Code" as UC8 USECASE_COLOR
+    usecase "Clear Code Entry" as UC9 USECASE_COLOR
+    usecase "Monitor System Status" as UC10 USECASE_COLOR
+    usecase "Perform System Maintenance" as UC11 USECASE_COLOR
+}
+
+' Actor-Use Case relationships
+user --> UC1
+user --> UC2
+user --> UC5
+user --> UC9
+detector --> UC3
+security --> UC6
+tech --> UC11
+tech --> UC10
+
+' Include relationships
+UC1 ..> UC7 : <<include>>
+UC2 ..> UC5 : <<include>>
+UC5 ..> UC8 : <<include>>
+UC3 ..> UC6 : <<include>>
+UC3 ..> UC4 : <<include>>
+
+' Extend relationships  
+UC9 ..> UC5 : <<extend>>
+UC11 ..> UC10 : <<extend>>
+
+@enduml

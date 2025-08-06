@@ -69,6 +69,19 @@
                 "focus": false,
                 "panel": "shared"
             }
+        },
+        {
+            "label": "Run Enhanced JavaAnimation",
+            "type": "shell",
+            "command": "C:/D/Australia Study/maven-mvnd-1.0.2-windows-amd64/mvn/bin/mvn.cmd",
+            "args": ["clean", "javafx:run"],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared"
+            }
         }
     ]
 }
