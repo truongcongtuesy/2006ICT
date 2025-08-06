@@ -189,5 +189,3 @@ mvn test
 This project is for educational purposes as part of the 2006ICT course.
 
 ---
-
-**Note:** This project successfully replaces IntelliJ IDEA with VS Code while maintaining all required functionality for Lab 2 exercises.
