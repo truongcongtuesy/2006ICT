@@ -5,13 +5,13 @@
          http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.lab2</groupId>
-    <artifactId>java-lab2-project</artifactId>
+    <groupId>com.lab4</groupId>
+    <artifactId>exercise1-enhanced-javaanimation</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>Lab 2 - Java Development Project</name>
-    <description>Lab 2 exercises for Java development, JavaFX, and requirements engineering</description>
+    <name>Lab 4 - Exercise 1: Enhanced JavaAnimation</name>
+    <description>Enhanced JavaAnimation with SOLID principles and improved UI controls</description>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -70,24 +70,8 @@
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>${javafx.maven.plugin.version}</version>
                 <configuration>
-                    <mainClass>com.lab3.exercise1.EnhancedJavaAnimation</mainClass>
+                    <mainClass>com.lab4.exercise1.EnhancedJavaAnimation</mainClass>
                 </configuration>
-                <executions>
-                    <execution>
-                        <!-- Configuration for debugging -->
-                        <id>default-cli</id>
-                        <configuration>
-                            <mainClass>com.lab3.exercise1.EnhancedJavaAnimation</mainClass>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <!-- Configuration for Lab 4 -->
-                        <id>run-lab4</id>
-                        <configuration>
-                            <mainClass>com.lab4.exercise1.EnhancedJavaAnimation</mainClass>
-                        </configuration>
-                    </execution>
-                </executions>
             </plugin>
 
             <!-- Maven Surefire Plugin for testing -->
